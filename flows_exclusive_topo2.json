@@ -1,0 +1,30 @@
+{
+  "s2": [
+    {
+      "priority": 65535, 
+      "outport": 4, 
+      "inport": 2, 
+      "dpid": 2
+    }, 
+    {
+      "priority": 65535, 
+      "outport": 2, 
+      "inport": 4, 
+      "dpid": 2
+    }
+  ], 
+  "s1": [
+    {
+      "priority": 65535, 
+      "outport": 2, 
+      "inport": 7, 
+      "dpid": 1
+    }, 
+    {
+      "priority": 65535, 
+      "outport": 7, 
+      "inport": 2, 
+      "dpid": 1
+    }
+  ]
+}
