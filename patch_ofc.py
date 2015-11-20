@@ -17,76 +17,15 @@ from ryu.app.wsgi import ControllerBase, WSGIApplication, route
 import patch_ofc_flowbuilder
 import patch_ofc_error
 
+'''
+"L1patch" OpenFlow controller based on "OFPatchPanel".
+See also "OFPatchPanel" application.
+nmasao/OFPatchPanel-SDNHackathon2014 · GitHub
+https://github.com/nmasao/OFPatchPanel-SDNHackathon2014
+'''
+
 patch_instance_name = 'patch_app'
-
 LOG = logging.getLogger('ryu.app.patch.patch_rest')
-
-
-'''
-1. Set port-to-port connectivity
-
-REQUEST
-PUT /patch/flow
-{
-    # MUST
-    "dpid": <int>,
-
-    # MUST match condition
-    "inport": <int>,
-
-    # MUST actions, one of outport/outports
-    "outport": <int>,
-    "outports": [<int>, <int>,...,<int>],
-
-    # optional match conditions
-    "eth_src": <string>,
-    "eth_dst": <string>,
-    "vlan_vid": <int>,
-    "mpls_label": <int>,
-
-    # optional actions
-    "push_vlan": <int>,
-    "pop_vlan": true,
-    "push_mpls": <int>,
-    "pop_mpls": true
-}
-
-RESPONSE
-Status Code:
-200 OK
-400 Bad Request
-404 Not Found
-
-2. Delete port-to-port connectivity (TODO)
-
-REQUEST
-DELETE /patch/flow
-{
-    "dpid": <int>,
-    "inport": <int>,
-}
-
-
-RESPONSE
-Status Code:
-200 OK
-400 Bad Request
-404 Not Found
-
-2. Get all flows
-REQUEST
-GET /patch/flow
-
-RESPONSE
-Status Code: 200 OK
-[
-    {
-        "dpid": <int>,
-        # optional match condition
-        "inport": <int>
-    }
-]
-'''
 
 
 class PatchPanel(app_manager.RyuApp):
