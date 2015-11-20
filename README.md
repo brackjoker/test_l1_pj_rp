@@ -66,14 +66,14 @@ topo2で作る構成の図はドキュメントにあるはずなのでそれを
 
 pingallするとこういうのが出てきて、図で示した「ワイヤ」接続ができているというのがわかりますよね、くらいはあってもいいかな…
 
-## L1patchの実行(自動実行モード)
+##  L1patchの実行(自動実行モード)
 
     hoge@prjexp01:~/l1patch-dev$ sudo python run_scenario_test.py -f testdefs_topo2.json --all-layers
 
 実行が終わったら結果(test_result_topo2.md)が生成されているはずなので確認してみてください。
 
-## ちょっと複雑なテストの実行
-
+##  応用試験
+  
 
 
 テスト定義の中で指定するテストシナリオファイルを `scenario_pattern_topo2.json`(リンク張る) に変えてみるとどうなるか。
